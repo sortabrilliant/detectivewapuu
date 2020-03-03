@@ -1,9 +1,9 @@
 {
   "name": "Detective Wapuu",
-  "description": "Detect Gutenberg blocks used on the site.",
+  "description": "Really like a WordPress site? See how they built it with Detective Wapuu.",
   "version": "1.0.0",
   "author": "sorta brilliant",
-  "homepage_url": "https://github.com/sortabrilliant/detectivewapuu",
+  "homepage_url": "https://sortabrilliant.com/detectivewapuu",
   "manifest_version": 2,
   "icons": {
     "16": "images/icon-16.png",
