@@ -45,6 +45,15 @@ function injectOverlay( name, block ) {
     block.appendChild(overlay);
 }
 
+// Detect blocks on page load.
+document.addEventListener( 'DOMContentLoaded', () => {
+    const blocks = document.querySelectorAll('[class^="wp-block"]');
+
+    if ( blocks.length ) {
+        chrome.runtime.sendMessage({ "message": "has_blocks" });
+    }
+} );
+
 chrome.runtime.onMessage.addListener( ( request ) => {
     if ( request.message === "scan_blocks" ) {
         const blocks = document.querySelectorAll('[class^="wp-block"]');

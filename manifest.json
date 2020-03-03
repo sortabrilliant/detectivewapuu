@@ -6,8 +6,8 @@
   "homepage_url": "https://sortabrilliant.com/detectivewapuu",
   "manifest_version": 2,
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png"
+    "16": "images/black/16.png",
+    "32": "images/black/32.png"
   },
   "permissions": [
     "activeTab",
@@ -16,8 +16,8 @@
   ],
   "browser_action": {
     "default_icon": {
-      "16": "images/icon-16.png",
-      "32": "images/icon-32.png"
+      "16": "images/black/16.png",
+      "32": "images/black/32.png"
     },
     "chrome_style": false
   },
@@ -30,7 +30,8 @@
       "matches": [
       "<all_urls>"
       ],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_start"
     }
   ]
 }
