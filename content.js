@@ -1,5 +1,6 @@
 // Get block name from the class.
 const REGEX = /(?<=wp-block-).[^_\s]*/g;
+const IGNORED_BLOCKS = [ 'columns', 'column' ];
 
 function hasOverlay( block ) {
     return block.classList.contains('has-detected') || block.parentNode.classList.contains('has-detected');
@@ -57,6 +58,10 @@ chrome.runtime.onMessage.addListener( ( request ) => {
 
         blocks.forEach( ( block ) => {
             const [ name ] = block.classList.value.match( REGEX ) || [];
+
+            if ( IGNORED_BLOCKS.includes( name ) ) {
+                return;
+            }
 
             if ( name && ! hasOverlay( block ) ) {
                 injectOverlay( name, block );
