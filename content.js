@@ -6,6 +6,10 @@ function hasOverlay( block ) {
 }
 
 function injectStyles() {
+    if ( document.getElementById('detective-wapuu-styles') ) {
+        return;
+    }
+
     const styles = `
         .has-detected {
             position: relative;
@@ -25,6 +29,8 @@ function injectStyles() {
     `;
 
     styleEl = document.createElement('style');
+    styleEl.setAttribute('id', 'detective-wapuu-styles');
+
     document.body.appendChild(styleEl);
     styleEl.appendChild(document.createTextNode(styles));
 }
