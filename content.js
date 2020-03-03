@@ -38,12 +38,12 @@ function injectOverlay( name, block ) {
     block.appendChild(overlay);
 }
 
-chrome.runtime.onMessage.addListener( ( request, sender, sendResponse ) => {
+chrome.runtime.onMessage.addListener( ( request ) => {
     if ( request.message === "scan_blocks" ) {
         const blocks = document.querySelectorAll('[class^="wp-block"]');
 
         if ( ! blocks.length ) {
-            console.log( 'No blocks 😔');
+            console.log('No blocks 😔');
             return;
         }
 
