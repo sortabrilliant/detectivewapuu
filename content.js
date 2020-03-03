@@ -1,6 +1,6 @@
 // Get block name from the class.
 const REGEX = /(?<=wp-block-).[^_\s]*/g;
-const IGNORED_BLOCKS = [ 'columns', 'column', 'group' ];
+const IGNORED_BLOCKS = [ 'columns', 'column', 'group', 'coblocks-row', 'coblocks-column' ];
 
 function hasOverlay( block ) {
     return block.classList.contains('has-detected') || block.parentNode.classList.contains('has-detected');
