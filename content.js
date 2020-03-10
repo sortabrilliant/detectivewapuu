@@ -16,8 +16,8 @@ function injectStyles() {
             position: relative;
         }
         .detective-wapuu-overlay {
-            background-color: rgba(251, 93, 232, 0.15);
-            border: 2px solid #FB5DE8;
+            background-color: rgba(42, 61, 228, 0.15);
+            border: 1px solid #2a3ce4;
             height: 100%;
             left: 0;
             position: absolute;
@@ -26,8 +26,8 @@ function injectStyles() {
             z-index: 10;
         }
         .detective-wapuu-overlay__tab {
-            background-color: #FB5DE8;
-            color: #000;
+            background-color: #2a3ce4;
+            color: #fff;
             font-size: 11px;
             height: 22px;
             left: -1px;
