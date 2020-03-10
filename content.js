@@ -3,7 +3,7 @@ const REGEX = /(?<=wp-block-).[^_\s]*/g;
 const IGNORED_BLOCKS = [ 'columns', 'column', 'group', 'coblocks-row', 'coblocks-column' ];
 
 function hasOverlay( block ) {
-    return block.classList.contains('has-detected') || block.parentNode.classList.contains('has-detected');
+    return block.classList.contains('is-detected') || block.parentNode.classList.contains('is-detected');
 }
 
 function injectStyles() {
@@ -12,21 +12,29 @@ function injectStyles() {
     }
 
     const styles = `
-        .has-detected {
+        .is-detected {
             position: relative;
         }
         .detective-wapuu-overlay {
+            background-color: rgba(42, 61, 228, 0.15);
+            border: 1px solid #2a3ce4;
+            height: 100%;
+            left: 0;
             position: absolute;
             top: 0;
-            left: 0;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
             width: 100%;
             z-index: 10;
+        }
+        .detective-wapuu-overlay__tab {
+            background-color: #2a3ce4;
+            color: #fff;
+            font-size: 11px;
+            height: 22px;
+            left: -1px;
+            line-height: 22px;
+            padding: 0px 8px;
+            position: absolute;
+            top: -22px;
         }
     `;
 
@@ -39,10 +47,15 @@ function injectStyles() {
 
 function injectOverlay( name, block ) {
     const overlay = document.createElement('div');
-    overlay.classList.add('detective-wapuu-overlay');
-    overlay.innerText = name;
+    const tab = document.createElement('span');
 
-    block.classList.add('has-detected');
+    overlay.classList.add('detective-wapuu-overlay');
+    tab.classList.add('detective-wapuu-overlay__tab');
+
+    overlay.appendChild(tab);
+    tab.innerText = name;
+
+    block.classList.add('is-detected');
     block.appendChild(overlay);
 }
 
