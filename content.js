@@ -3,7 +3,7 @@ const REGEX = /(?<=wp-block-).[^_\s]*/g;
 const IGNORED_BLOCKS = [ 'columns', 'column', 'group', 'coblocks-row', 'coblocks-column' ];
 
 function hasOverlay( block ) {
-    return block.classList.contains('has-detected') || block.parentNode.classList.contains('has-detected');
+    return block.classList.contains('is-detected') || block.parentNode.classList.contains('is-detected');
 }
 
 function injectStyles() {
@@ -12,7 +12,7 @@ function injectStyles() {
     }
 
     const styles = `
-        .has-detected {
+        .is-detected {
             position: relative;
         }
         .detective-wapuu-overlay {
@@ -42,7 +42,7 @@ function injectOverlay( name, block ) {
     overlay.classList.add('detective-wapuu-overlay');
     overlay.innerText = name;
 
-    block.classList.add('has-detected');
+    block.classList.add('is-detected');
     block.appendChild(overlay);
 }
 
