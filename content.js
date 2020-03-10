@@ -30,7 +30,7 @@ function injectStyles() {
             color: #000;
             font-size: 11px;
             height: 22px;
-            left: -2px;
+            left: -1px;
             line-height: 22px;
             padding: 0px 8px;
             position: absolute;
