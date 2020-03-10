@@ -16,18 +16,25 @@ function injectStyles() {
             position: relative;
         }
         .detective-wapuu-overlay {
+            background-color: rgba(251, 93, 232, 0.15);
+            border: 2px solid #FB5DE8;
+            height: 100%;
+            left: 0;
             position: absolute;
             top: 0;
-            left: 0;
-            color: #fff;
-            background: rgba(251, 93, 232, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
             width: 100%;
             z-index: 10;
-            border: 2px solid #FB5DE8;
+        }
+        .detective-wapuu-overlay__tab {
+            background-color: #FB5DE8;
+            color: #000;
+            font-size: 11px;
+            height: 22px;
+            left: -2px;
+            line-height: 22px;
+            padding: 0px 8px;
+            position: absolute;
+            top: -22px;
         }
     `;
 
@@ -40,8 +47,13 @@ function injectStyles() {
 
 function injectOverlay( name, block ) {
     const overlay = document.createElement('div');
+    const tab = document.createElement('span');
+
     overlay.classList.add('detective-wapuu-overlay');
-    overlay.innerText = name;
+    tab.classList.add('detective-wapuu-overlay__tab');
+
+    overlay.appendChild(tab);
+    tab.innerText = name;
 
     block.classList.add('is-detected');
     block.appendChild(overlay);
