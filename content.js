@@ -20,13 +20,14 @@ function injectStyles() {
             top: 0;
             left: 0;
             color: #fff;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(251, 93, 232, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
             width: 100%;
             z-index: 10;
+            border: 2px solid #FB5DE8;
         }
     `;
 
