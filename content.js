@@ -34,7 +34,7 @@ function injectStyles() {
             line-height: 22px;
             padding: 0px 8px;
             position: absolute;
-            top: -22px;
+            top: 0px;
         }
     `;
 
